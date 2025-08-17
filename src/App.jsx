@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Plus, Minus, RotateCcw } from 'lucide-react';
 import './App.css'
+import CountDisplay from './components/CountDisplay'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,8 +31,7 @@ function App() {
           <h1 className='mb-6 text-xl font-medium md:text-2xl font-inter'>useState カウント</h1>
 
           {/* カウントエリア */}
-          <p className='mb-4 font-light font-inter'>現在のカウント</p>
-          <p className='p-2 mb-10 text-3xl font-semibold tracking-wider border rounded md:w-48 md:mx-auto bg-white/10 font-fira'>{count}</p>
+          <CountDisplay count={count}/>
 
           {/* ボタンエリア */}
           <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
