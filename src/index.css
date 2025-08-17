@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 背景スタイル */
+@layer components {
+  .bg-fancy {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 20s ease infinite;
+    position: relative;
+  }
+  
+  .bg-fancy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
+    animation: float 30s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* ボタン統一スタイル */
+@layer components {
+  .app_btn {
+    @apply flex items-center justify-center gap-2 p-3 font-medium duration-300 bg-gray-800 rounded md:p-4 lg:hover:scale-105 lg:hover:bg-gray-700 font-inter;
+  }
+}
