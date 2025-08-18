@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <div className='flex items-center justify-center min-h-screen text-gray-300 bg-fancy'>
-        <div className='max-w-xs sm:max-w-lg'>
+        <div className='max-w-xs sm:max-w-xl'>
           <h1 className='mb-6 text-xl font-medium md:text-2xl font-inter'>useState カウント</h1>
 
           {/* カウントエリア */}
