@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Plus, Minus, RotateCcw } from 'lucide-react';
 import './App.css'
 import CountDisplay from './components/CountDisplay'
-import CountButton from './components/CountButton';
+// import CountButton from './components/CountButton';
+import ButtonGroup from './components/ButtonGroup';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,11 +36,12 @@ function App() {
           <CountDisplay count={count} />
 
           {/* ボタンエリア */}
-          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-            <CountButton onClick={handleIncrement} label="Count Up" icon={<Plus />} />
-            <CountButton onClick={handleDecrement} label="Count Up" icon={<Minus />} />
-            <CountButton onClick={handleReset} label="Reset" icon={<RotateCcw />} />
-          </div>
+          <ButtonGroup
+            handleIncrement={handleIncrement}
+            handleDecrement={handleDecrement}
+            handleReset={handleReset}
+          />
+
         </div>
       </div>
     </>
