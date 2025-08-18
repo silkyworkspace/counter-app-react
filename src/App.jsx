@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { Plus, Minus, RotateCcw } from 'lucide-react';
 import './App.css'
 import CountDisplay from './components/CountDisplay'
-// import CountButton from './components/CountButton';
 import ButtonGroup from './components/ButtonGroup';
 
 function App() {
