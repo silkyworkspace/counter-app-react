@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Plus, Minus, RotateCcw } from 'lucide-react';
 import './App.css'
 import CountDisplay from './components/CountDisplay'
+import CountButton from './components/CountButton';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,28 +32,13 @@ function App() {
           <h1 className='mb-6 text-xl font-medium md:text-2xl font-inter'>useState カウント</h1>
 
           {/* カウントエリア */}
-          <CountDisplay count={count}/>
+          <CountDisplay count={count} />
 
           {/* ボタンエリア */}
           <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-            <button onClick={handleIncrement} className='app_btn'>
-              <span className='btn_name'>Count Up</span>
-              <span className='inline-block'>
-                <Plus className='w-4 h-4' />
-              </span>
-            </button>
-            <button onClick={handleDecrement} className='app_btn'>
-              <span className='btn_name'>Count Down</span>
-              <span className='inline-block w-4'>
-                <Minus className='w-4 h-4' />
-              </span>
-            </button>
-            <button onClick={handleReset} className='app_btn'>
-              <span className='btn_name'>Reset</span>
-              <span className='inline-block w-4'>
-                <RotateCcw className='w-4 h-4' />
-              </span>
-            </button>
+            <CountButton onClick={handleIncrement} label="Count Up" icon={<Plus />} />
+            <CountButton onClick={handleDecrement} label="Count Up" icon={<Minus />} />
+            <CountButton onClick={handleReset} label="Reset" icon={<RotateCcw />} />
           </div>
         </div>
       </div>
