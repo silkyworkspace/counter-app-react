@@ -1,9 +1,8 @@
 {
-  "name": "counter-app-react",
+  "name": "todo-app02",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://silkyworkspace.github.io/counter-app-react",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
